@@ -48,18 +48,6 @@ cp .env.example .env   # then put your key in .env
 npm run dev            # http://localhost:3000
 ```
 
-`.env`:
-
-
-Other scripts: `npm run build` (production build) · `npm run lint` (type check).
-
-## API
-
-| Endpoint | Purpose |
-|---|---|
-| `GET /api/health` | Health check |
-| `POST /api/parse-usage` `{ rawText }` | P1 – text → structured app list |
-| `POST /api/audit` `{ config, report }` | P2 – report → reduction plan |
 
 ## Project structure
 
@@ -76,16 +64,6 @@ code/ (or src/, server.ts at root)
 test-data/            test inputs and saved outputs
 docs/                 diagrams and the Milestone 2 PDF
 ```
-
-## Prompts
-
-| ID | Name | File |
-|---|---|---|
-| P1 | Screen-time parser | `prompts/final/P1.txt` |
-| P2 | Carbon audit & reduction plan | `prompts/final/P2.txt` |
-
-Both use `responseMimeType: application/json` with a `responseSchema`; temperature is left at default.
-
 ## Testing
 
 The emission engine was tested on 14 inputs (normal, edge, invalid) – 12 pass, 2 fail. Known issues:
